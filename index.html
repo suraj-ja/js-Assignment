@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Assignment</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<style type="text/css">
+	*{margin:0;padding:0;box-sizing:border-box;}
+		.container::after,.color::after{content:"";clear:both;display:block;}
+		.color,.color strong{width:300px;float:left;padding:20px;}
+		.clr-box{width:80px;margin-bottom:20px;cursor:pointer;font-size:16px;font-weight:700;cursor:pointer;float:left;margin-left:20px;}
+		.clr-box p{text-align: center;text-transform:capitalize;}
+		.clr-box img{padding:5px;border:1px solid #eee;height:157px}
+		.img-responsive{width:100%;height:auto}
+		.display-img{width:calc(100% - 350px);float:left;padding: 20px}
+		.display-img-box{width:300px;padding:20px;border:1px solid #eee;}
+		@media only screen and (max-width:899px){
+		.container{text-align:center;}
+		.color{width:100%;float:none}	
+		.display-img{width:100%;float:none;margin:0 auto}
+		.display-img-box{margin:0 auto}
+		.clr-box{width:15%;float:left;margin-left:20px;}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="color">
+			<div class="clr-box">
+				<div class="black"><img src="images/1.jpeg" class="img-responsive choice" onclick="change(this)""><p>black</p></div>
+			</div>
+			<div class="clr-box">
+				<div class="blue"><img src="images/2.jpeg" class="img-responsive choice" onclick="change(this)"><p>blue</p></div>
+			</div>
+			<div class="clr-box">
+				<div class="gold"><img src="images/3.jpeg" class="img-responsive choice" onclick="change(this)"><p>gold</p></div>
+			</div>
+			<div class="clr-box">
+				<div class="rose-gold"><img src="images/4.jpeg" class="img-responsive choice" onclick="change(this)"><p>rose-gold</p></div>
+			</div>
+		</div>
+		<div class="display-img">
+			<div class="display-img-box"><img src="images/1.jpeg" class="img-responsive choice"  id="img_data"></div>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+
+	change = function(curtag){
+	for(i=0;i<=4;i++){
+		document.getElementsByClassName("choice")[i].style.border="none";
+	}
+	curtag.style.border="1px solid red";
+	path = curtag.src;
+	newpath = path;
+	console.log(newpath);
+	console.log( document.getElementById("img_data") );
+	document.getElementById("img_data").attributes.src.value = newpath;
+}
+</script>
